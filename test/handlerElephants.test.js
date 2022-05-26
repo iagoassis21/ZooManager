@@ -13,7 +13,13 @@ describe('Testes da função HandlerElephants', () => {
   it('Teste com parâmetro errado', () => {
     expect(handlerElephants('O fer é um Monstro, insubstituível eu diria, FERnomenal, FEROZ, UM MONSTRO')).toBe(null);
   });
-  it('Teste com parâmetro errado', () => {
+  it('retorna a localização dos elefantes dentro do Zoológico', () => {
     expect(handlerElephants('location')).toEqual('NW');
+  });
+  it('Teste com a função chamada sem parâmetro', () => {
+    expect(handlerElephants()).toBe(undefined);
+  });
+  it('Teste se o parâmetro é inválido(não sendo uma string), e retorna a mensagem: "Parâmetro inválido, é necessário uma string"', () => {
+    expect(handlerElephants(50)).toEqual('Parâmetro inválido, é necessário uma string');
   });
 });
